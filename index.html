@@ -73,6 +73,43 @@
         .term-trigger:hover {
             text-decoration-style: solid;
         }
+
+        /* * * NEW CSS ADDED HERE 
+         * */
+
+        /* 1. Define the animation keyframes */
+        @keyframes pulse-border {
+          0% {
+            /* Start with a 0px glow, color is amber-300 */
+            box-shadow: 0 0 0 0 rgba(252, 211, 77, 0.7);
+          }
+          70% {
+            /* Glow expands to 10px and fades out */
+            box-shadow: 0 0 0 10px rgba(252, 211, 77, 0);
+          }
+          100% {
+            /* End same as start, to allow looping */
+            box-shadow: 0 0 0 0 rgba(252, 211, 77, 0);
+          }
+        }
+
+        /* 2. Create the button class that uses the animation */
+        .sparkle-button {
+            display: inline-block; /* Needed for padding and animation */
+            padding: 2px 6px;
+            border-radius: 6px; /* Rounded corners */
+            
+            /* Use the animation! */
+            animation: pulse-border 2s infinite;
+
+            /* Add a hover effect */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .sparkle-button:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+            animation-play-state: paused; /* Optional: pause animation on hover */
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-gray-200">
@@ -120,7 +157,7 @@
 
                 <div class="space-y-6 text-lg md:text-xl bg-slate-800 p-8 md:p-10 rounded-lg shadow-2xl border-4 border-teal-600">
                     <p>
-                        <a href="https://dwallace87-lgtm.github.io/crvcsq1/" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                        <a href="https://dwallace87-lgtm.github.io/crvcsq1/" target="_blank" rel="noopener noreferrer" class="sparkle-button">
                             <strong class="text-amber-300 font-semibold">SQ 1:</strong>
                         </a>
                         Did the <span id="munsee-lenape-trigger" class="term-trigger text-teal-400 decoration-teal-400/50 hover:decoration-teal-400">Munsee Lenape</span> band of <span id="algonquin-trigger" class="term-trigger text-amber-400 decoration-amber-400/50 hover:decoration-amber-400">Algonquin</span> benefit from the sale of Manhattan Island?
@@ -180,7 +217,7 @@
                     <p class="text-sm text-gray-400">Returning territories</p>
                 </div>
                 <div class="bg-slate-700 p-4 rounded-lg">
-                    <svg class="w-10 h-10 mx-auto mb-2 text-teal-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" /></svg>
+                    <svg class="w-10 h-10 mx-auto mb-2 text-teal-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056 .2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" /></svg>
                     <span class="font-semibold">Programs</span>
                     <p class="text-sm text-gray-400">New housing/education</p>
                 </div>
@@ -252,12 +289,12 @@
             <h3 class="text-xl font-bold text-amber-300 text-center mb-4">Forms of Control Include:</h3>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div class="bg-slate-700 p-4 rounded-lg">
-                    <svg class="w-10 h-10 mx-auto mb-2 text-teal-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A9.06 9.06 0 0 1 6 18.719m12 0c.212.02 .427 .034 .642 .043a9.003 9.003 0 0 0 2.126-1.872A3 3 0 0 0 13.06 14.821a9.06 9.06 0 0 1-1.06 3.898m-9.454 0c1.753.97 3.792 1.57 5.963 1.584m-9.454 0a9.06 9.06 0 0 1-1.06-3.898A3 3 0 0 0 3.741 16.14a9.003 9.003 0 0 0 2.126 1.872m12 0c.362 .034 .72 .054 1.08 .068m-12 0c.359 .014 .718 .034 1.08 .068m5.64 0c.359 .014 .718 .034 1.08 .068m1.157-1.397a3 3 0 0 0-4.682-2.72m0 0a3 3 0 0 0-4.682 2.72m4.682 0a3 3 0 0 0 4.682 2.72M6 12c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6Zm12 0A6 6 0 1 0 6 12a6 6 0 0 0 12 0Z" /></svg>
+                    <svg class="w-10 h-10 mx-auto mb-2 text-teal-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001 .031c0 .225-.012 .447-.037 .666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A9.06 9.06 0 0 1 6 18.719m12 0c.212 .02 .427 .034 .642 .043a9.003 9.003 0 0 0 2.126-1.872A3 3 0 0 0 13.06 14.821a9.06 9.06 0 0 1-1.06 3.898m-9.454 0c1.753.97 3.792 1.57 5.963 1.584m-9.454 0a9.06 9.06 0 0 1-1.06-3.898A3 3 0 0 0 3.741 16.14a9.003 9.003 0 0 0 2.126 1.872m12 0c.362 .034 .72 .054 1.08 .068m-12 0c.359 .014 .718 .034 1.08 .068m5.64 0c.359 .014 .718 .034 1.08 .068m1.157-1.397a3 3 0 0 0-4.682-2.72m0 0a3 3 0 0 0-4.682 2.72m4.682 0a3 3 0 0 0 4.682 2.72M6 12c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6Zm12 0A6 6 0 1 0 6 12a6 6 0 0 0 12 0Z" /></svg>
                     <span class="font-semibold">Settlers</span>
                     <p class="text-sm text-gray-400">Moving its own people in</p>
                 </div>
                 <div class="bg-slate-700 p-4 rounded-lg">
-                    <svg class="w-10 h-10 mx-auto mb-2 text-teal-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" /></svg>
+                    <svg class="w-10 h-10 mx-auto mb-2 text-teal-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056 .2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" /></svg>
                     <span class="font-semibold">Government</span>
                     <p class="text-sm text-gray-400">Imposing new laws</p>
                 </div>
@@ -313,7 +350,7 @@
                 </div>
                 <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" /></svg>
                 <div class="flex flex-col items-center p-4 bg-slate-700/50 rounded-lg">
-                    <svg class="w-12 h-12 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001 .031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A9.06 9.06 0 0 1 6 18.719m12 0c.212 .02 .427 .034 .642 .043a9.003 9.003 0 0 0 2.126 -1.872A3 3 0 0 0 13.06 14.821a9.06 9.06 0 0 1 -1.06 3.898m-9.454 0c1.753 .97 3.792 1.57 5.963 1.584m-9.454 0a9.06 9.06 0 0 1 -1.06 -3.898A3 3 0 0 0 3.741 16.14a9.003 9.003 0 0 0 2.126 1.872m12 0c.362 .034 .72 .054 1.08 .068m-12 0c.359 .014 .718 .034 1.08 .068m5.64 0c.359 .014 .718 .034 1.08 .068m1.157 -1.397a3 3 0 0 0 -4.682 -2.72m0 0a3 3 0 0 0 -4.682 2.72m4.682 0a3 3 0 0 0 4.682 2.72M6 12c0 -3.314 2.686 -6 6 -6s6 2.686 6 6c0 3.314 -2.686 6 -6 6s-6 -2.686 -6 -6Zm12 0A6 6 0 1 0 6 12a6 6 0 0 0 12 0Z" /></svg>
+                    <svg class="w-12 h-12 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001 .031c0 .225-.012 .447-.037 .666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A9.06 9.06 0 0 1 6 18.719m12 0c.212 .02 .427 .034 .642 .043a9.003 9.003 0 0 0 2.126 -1.872A3 3 0 0 0 13.06 14.821a9.06 9.06 0 0 1 -1.06 3.898m-9.454 0c1.753 .97 3.792 1.57 5.963 1.584m-9.454 0a9.06 9.06 0 0 1 -1.06 -3.898A3 3 0 0 0 3.741 16.14a9.003 9.003 0 0 0 2.126 1.872m12 0c.362 .034 .72 .054 1.08 .068m-12 0c.359 .014 .718 .034 1.08 .068m5.64 0c.359 .014 .718 .034 1.08 .068m1.157 -1.397a3 3 0 0 0 -4.682 -2.72m0 0a3 3 0 0 0 -4.682 2.72m4.682 0a3 3 0 0 0 4.682 2.72M6 12c0 -3.314 2.686 -6 6 -6s6 2.686 6 6c0 3.314 -2.686 6 -6 6s-6 -2.686 -6 -6Zm12 0A6 6 0 1 0 6 12a6 6 0 0 0 12 0Z" /></svg>
                     <span class="font-bold">INCLUDES:</span>
                     <span class="text-xs text-gray-400">Lenape, Ojibwe, Cree, & many others</span>
                 </div>
@@ -399,7 +436,7 @@
             <p class="text-center text-lg text-gray-300 mb-8">A group of Native American activists, many of them college students, who came together from many different tribes to protest for Indigenous rights.</p>
             <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-center text-amber-300 mb-6">
                 <div class="flex flex-col items-center p-4 bg-slate-700/50 rounded-lg">
-                    <svg class="w-12 h-12 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001 .031c0 .225-.012.447-.037 .666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207 -.576-5.963 -1.584A9.06 9.06 0 0 1 6 18.719m12 0c.212 .02 .427 .034 .642 .043a9.003 9.003 0 0 0 2.126 -1.872A3 3 0 0 0 13.06 14.821a9.06 9.06 0 0 1 -1.06 3.898m-9.454 0c1.753 .97 3.792 1.57 5.963 1.584m-9.454 0a9.06 9.06 0 0 1 -1.06 -3.898A3 3 0 0 0 3.741 16.14a9.003 9.003 0 0 0 2.126 1.872m12 0c.362 .034 .72 .054 1.08 .068m-12 0c.359 .014 .718 .034 1.08 .068m5.64 0c.359 .014 .718 .034 1.08 .068m1.157 -1.397a3 3 0 0 0 -4.682 -2.72m0 0a3 3 0 0 0 -4.682 2.72m4.682 0a3 3 0 0 0 4.682 2.72M6 12c0 -3.314 2.686 -6 6 -6s6 2.686 6 6c0 3.314 -2.686 6 -6 6s-6 -2.686 -6 -6Zm12 0A6 6 0 1 0 6 12a6 6 0 0 0 12 0Z" /></svg>
+                    <svg class="w-12 h-12 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001 .031c0 .225-.012 .447-.037 .666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207 -.576-5.963 -1.584A9.06 9.06 0 0 1 6 18.719m12 0c.212 .02 .427 .034 .642 .043a9.003 9.003 0 0 0 2.126 -1.872A3 3 0 0 0 13.06 14.821a9.06 9.06 0 0 1 -1.06 3.898m-9.454 0c1.753 .97 3.792 1.57 5.963 1.584m-9.454 0a9.06 9.06 0 0 1 -1.06 -3.898A3 3 0 0 0 3.741 16.14a9.003 9.003 0 0 0 2.126 1.872m12 0c.362 .034 .72 .054 1.08 .068m-12 0c.359 .014 .718 .034 1.08 .068m5.64 0c.359 .014 .718 .034 1.08 .068m1.157 -1.397a3 3 0 0 0 -4.682 -2.72m0 0a3 3 0 0 0 -4.682 2.72m4.682 0a3 3 0 0 0 4.682 2.72M6 12c0 -3.314 2.686 -6 6 -6s6 2.686 6 6c0 3.314 -2.686 6 -6 6s-6 -2.686 -6 -6Zm12 0A6 6 0 1 0 6 12a6 6 0 0 0 12 0Z" /></svg>
                     <span class="font-bold">WHO:</span>
                     <span class="text-xs text-gray-400">Activists from many tribes</span>
                 </div>
