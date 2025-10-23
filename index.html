@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600&display=swap" rel="stylesheet">
     <style>
         /* Apply Inter font and a subtle, nature-inspired pattern background */
         body {
@@ -110,6 +110,43 @@
             transform: scale(1.05); /* Slightly enlarge on hover */
             animation-play-state: paused; /* Optional: pause animation on hover */
         }
+
+        .intro-video-section {
+            margin-top: 4rem;
+        }
+
+        .intro-video-title {
+            font-family: 'Orbitron', 'Inter', sans-serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: #f6ad55; /* Tailwind amber-400 */
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 48rem;
+            margin: 0 auto;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(56, 189, 248, 0.25);
+            border: 3px solid rgba(251, 191, 36, 0.6);
+            background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15), rgba(30, 64, 175, 0.35));
+        }
+
+        .intro-video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-gray-200">
@@ -142,13 +179,22 @@
             </h1>
 
             <figure class="my-12 md:my-16">
-                <img src="https://www.learner.org/wp-content/uploads/2019/05/essential-lens-change-resistance-declaration-occupiers-alcatraz-indians-tribes-fig1061.jpg" 
-                     alt="A document from the Occupation of Alcatraz" 
+                <img src="https://www.learner.org/wp-content/uploads/2019/05/essential-lens-change-resistance-declaration-occupiers-alcatraz-indians-tribes-fig1061.jpg"
+                     alt="A document from the Occupation of Alcatraz"
                      class="w-full max-w-2xl mx-auto rounded-lg shadow-xl shadow-teal-500/20 border-4 border-amber-600">
                 <figcaption class="text-sm text-gray-400 mt-4 text-center max-w-lg mx-auto italic">
                     "Ilka Hartmann Photography – Indian America – The Occupation of Alcatraz 1969-1971." SquareSpace.com, 30 May 1970, ilkahartmann.squarespace.com/indian-america/the-occupation-of-alcatraz-19691970/. Accessed 5 Oct 2021
                 </figcaption>
             </figure>
+
+            <section class="intro-video-section">
+                <h3 class="intro-video-title">Intro Video</h3>
+                <div class="intro-video-wrapper">
+                    <iframe src="https://drive.google.com/file/d/1fOTxfqYgRlCB95gvy8bhnCkyrbnZkB65/preview"
+                            allow="autoplay; fullscreen"
+                            title="Introductory video for the project"></iframe>
+                </div>
+            </section>
 
             <section class="mt-20">
                 <h2 class="text-4xl font-bold text-amber-400 text-center mb-10">
